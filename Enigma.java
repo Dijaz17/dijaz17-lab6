@@ -21,12 +21,49 @@ public class Enigma{
 
     public String decrypt(String message){        
         //TODO
+        String decryptedMessage = "";
+        int idx_rotor2;
+        int idx_rotor2_2;
+        char char_rotor1;
+        char decryptedChar;
+
+
+        for(int i = 0; i < message.length(); i++){
+            idx_rotor2 = rotors[2].indexOf(message.charAt(i));
+            char_rotor1 = rotors[1].charAt(idx_rotor2);
+
+            idx_rotor2_2 = rotors[2].indexOf(char_rotor1);
+            decryptedChar = rotors[1].charAt(idx_rotor2_2);
+
+            decryptedMessage += decryptedChar;
+        }
+
+        return decryptedMessage;
     }
 
 
     
     public String encrypt(String message){
         //TODO
+        String encryptedMessage = "";
+        int idx_rotor0;
+        int idx_rotor1;
+        char char_rotor2;
+        char encryptedChar;
+
+
+        for(int i = 0; i < message.length(); i++){
+            idx_rotor0 = rotors[0].indexOf(message.charAt(i));
+            char_rotor2 = rotors[2].charAt(idx_rotor0);
+
+            idx_rotor1 = rotors[1].indexOf(char_rotor2);
+            encryptedChar = rotors[2].charAt(idx_rotor1);
+
+
+            encryptedMessage += encryptedChar;
+        }
+
+        return encryptedMessage;
     }
 
     
