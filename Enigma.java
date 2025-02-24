@@ -64,7 +64,7 @@ public class Enigma{
 
             encryptedMessage += encryptedChar;
 
-            rotors[0].rotateRotor();
+            rotate();
         }
 
         return encryptedMessage;

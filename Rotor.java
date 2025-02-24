@@ -8,15 +8,16 @@ public class Rotor {
         this.rotorValues = new String(v);
         this.startChar = c;
         
-        while(!this.rotate()){
-            rotateRotor();
-        }
+        while(!this.rotate());
             
     }
     
     public boolean rotate(){
         //TODO
         char[] rValsArr = rotorValues.toCharArray();
+
+        rotateRotor();
+
         if(this.startChar == rValsArr[0]){
             return true;
         }
