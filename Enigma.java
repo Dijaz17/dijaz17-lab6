@@ -29,6 +29,8 @@ public class Enigma{
 
 
         for(int i = 0; i < message.length(); i++){
+            rotors[0].rotateRotorCounter();
+            
             idx_rotor2 = rotors[2].indexOf(message.charAt(i));
             char_rotor1 = rotors[1].charAt(idx_rotor2);
 
@@ -61,11 +63,12 @@ public class Enigma{
 
 
             encryptedMessage += encryptedChar;
+
+            rotors[0].rotateRotor();
         }
 
         return encryptedMessage;
     }
-
     
     private void rotate(){
         if(rotors[0].rotate()){

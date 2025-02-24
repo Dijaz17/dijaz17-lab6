@@ -53,5 +53,16 @@ public class Rotor {
 
         rotorValues = rotatedString;
     }
+
+    public void rotateRotorCounter(){
+        char[] rValsArr = rotorValues.toCharArray();
+        String counterRotatedString = "";
+        for(int i = 1; i < rValsArr.length; i++){
+            counterRotatedString += rValsArr[i];
+        }
+        counterRotatedString += rValsArr[0];
+
+        rotorValues = counterRotatedString;
+    }
 }
     
