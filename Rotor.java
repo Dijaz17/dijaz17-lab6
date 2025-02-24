@@ -30,10 +30,12 @@ public class Rotor {
         char[] rValsArr = rotorValues.toCharArray();
 
         for(int i = 0; i < rValsArr.length; i++){
+
             if( c == rValsArr[i] ){
-                idx = i;
+                return i;
             }
         }
+
         return idx;
     }
 
@@ -46,12 +48,12 @@ public class Rotor {
     public void rotateRotor(){
         char[] rValsArr = rotorValues.toCharArray();
         String rotatedString = "";
-        rotatedString += rValsArr[26];
-        for(int i = 1; i < rValsArr.length-1; i++){
+        rotatedString += rValsArr[rotorValues.length()-1];
+        for(int i = 0; i < rValsArr.length-1; i++){
             rotatedString += rValsArr[i];
         }
 
-        rotorValues = rotatedString;
+        this.rotorValues = rotatedString;
     }
 
     public void rotateRotorCounter(){
@@ -62,7 +64,7 @@ public class Rotor {
         }
         counterRotatedString += rValsArr[0];
 
-        rotorValues = counterRotatedString;
+        this.rotorValues = counterRotatedString;
     }
 }
     
