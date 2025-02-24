@@ -29,15 +29,15 @@ public class Enigma{
 
 
         for(int i = 0; i < message.length(); i++){
-            rotors[0].rotateRotorCounter();
-            
             idx_rotor2 = rotors[2].indexOf(message.charAt(i));
             char_rotor1 = rotors[1].charAt(idx_rotor2);
-
+            
             idx_rotor2_2 = rotors[2].indexOf(char_rotor1);
-            decryptedChar = rotors[1].charAt(idx_rotor2_2);
+            decryptedChar = rotors[0].charAt(idx_rotor2_2);
 
             decryptedMessage += decryptedChar;
+            rotate();
+
         }
 
         return decryptedMessage;
@@ -77,5 +77,13 @@ public class Enigma{
             }
         }
     }
+
+    // private void rotateCounter(){
+    //     if(rotors[0].rotateCounter()){
+    //         if(rotors[1].rotateCounter()){
+    //             rotors[2].rotateCounter();
+    //         }
+    //     }
+    // }
     
 }

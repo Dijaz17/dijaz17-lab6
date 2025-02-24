@@ -1,7 +1,7 @@
 public class Rotor {
 
     
-    private String rotorValues;
+    public String rotorValues;
     private char startChar;
         
     public Rotor(String v, char c){
@@ -23,6 +23,17 @@ public class Rotor {
         }
         return false;
     }
+
+    // public boolean rotateCounter() {
+    //     char[] rValsArr = rotorValues.toCharArray();
+
+    //     rotateRotorCounter();
+
+    //     if(this.startChar == rValsArr[0]){
+    //         return true;
+    //     }
+    //     return false;
+    // }
     
 
     public int indexOf(char c){
@@ -57,15 +68,15 @@ public class Rotor {
         this.rotorValues = rotatedString;
     }
 
-    public void rotateRotorCounter(){
-        char[] rValsArr = rotorValues.toCharArray();
-        String counterRotatedString = "";
-        for(int i = 1; i < rValsArr.length; i++){
-            counterRotatedString += rValsArr[i];
-        }
-        counterRotatedString += rValsArr[0];
+    // public void rotateRotorCounter(){
+    //     char[] rValsArr = rotorValues.toCharArray();
+    //     String counterRotatedString = "";
+    //     for(int i = 1; i < rValsArr.length; i++){
+    //         counterRotatedString += rValsArr[i];
+    //     }
+    //     counterRotatedString += rValsArr[0];
 
-        this.rotorValues = counterRotatedString;
-    }
+    //     this.rotorValues = counterRotatedString;
+    // }
 }
     
